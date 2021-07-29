@@ -18,6 +18,8 @@ export class AuthComponent {
   errorMsg: string;
   user: User;
   private subs = new Subscription();
+  private signupForm: FormGroup;
+  private signupFormValues: any;
 
   constructor(private authService: AuthService, private router: Router, private fb: FormBuilder) {}
 
@@ -31,10 +33,30 @@ export class AuthComponent {
       email: ['', Validators.required],
       password: ['', Validators.required]
     };
+    this.signupFormValues = {
+      email: ['', Validators.required],
+      first_name: ['', Validators.required],
+      last_name: ['', Validators.required],
+      nickname: ['', Validators.required],
+      password: ['', Validators.required],
+      password_confirmation: ['', Validators.required],
+    };
   }
 
   createForm() {
     this.loginForm = this.fb.group(this.loginFormValues);
+    this.signupForm = this.fb.group(this.signupFormValues);
+  }
+
+  // signup(){
+  //   const form = this.signupForm.value;
+  //   const params = {email: form.email, first_name: }
+  // }
+// working on sign up method here. Need click listener on signup button
+// moved this to its own component because I was getting lost in the two forms.
+// I left this here because I may want to put it back.
+  onNavigate() {
+    this.router.navigate(['/signup'])
   }
 
   submitForm() {

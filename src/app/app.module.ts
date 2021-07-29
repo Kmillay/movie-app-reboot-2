@@ -21,6 +21,7 @@ import {
 import {MovieCardComponent} from './movies/movie-card/movie-card.component';
 import {NewMoviesComponent} from './movies/new-movies/new-movies.component';
 import { MoviesComponent } from './movies/movies.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { MoviesComponent } from './movies/movies.component';
     FooterComponent,
     MovieCardComponent,
     NewMoviesComponent,
+    SignupComponent,
 
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgbModule, FormsModule, ReactiveFormsModule, FontAwesomeModule ],
